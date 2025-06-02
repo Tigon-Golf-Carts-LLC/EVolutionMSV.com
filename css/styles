@@ -2,7 +2,7 @@
 
 /* Base Styles */
 :root {
-    --primary-color: #2a3cff;
+    --primary-color: #0096d6;
     --primary-dark: #0078a8;
     --primary-light: #00b0ff;
     --dark-bg: #121212;
