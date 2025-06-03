@@ -4,25 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EVolution MSV in DEALER_NAME - EVolution Medium Speed Vehicle Dealers</title>
-    <meta name="description" content="Find authorized EVolution Medium Speed Vehicle (EVolution MSV) dealers at DEALER_NAME. Connect with EVolution MSV specialists for eco-friendly, street-legal electric vehicles.">
-    <meta name="keywords" content="EVolution MSV, EVolution Medium Speed Vehicle, EVolution MSV dealer, electric vehicle, medium speed vehicle, DEALER_NAME">
+    <meta name="description" content="Find authorized EVolution Medium Speed Vehicle (EVolution MSV) dealers nationwide. Connect with EVolution MSV specialists for eco-friendly, street-legal electric vehicles.">
+    <meta name="keywords" content="EVolution MSV, EVolution Medium Speed Vehicle, EVolution MSV dealer, electric vehicle, medium speed vehicle">
     <link rel="stylesheet" href="css/styles.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="shortcut icon" href="/favicon/favicon.ico">
-
+    
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "EVolution MSV in DEALER_NAME",
-      "description": "Authorized EVolution Medium Speed Vehicle (EVolution MSV) dealer in DEALER_NAME. Offering sales, service, and support for eco-friendly, street-legal electric vehicles.",
-      "image": "https://evolutionmsv.com/images/evolution-msv-logo.jpg",
-      "url": "https://evolutionmsv.com/dealer-DEALER_URL.html",
-      "telephone": "DEALER_PHONE",
+      "description": "Authorized EVolution Medium Speed Vehicle dealer in DEALER_NAME. Offering sales, service, and support for eco-friendly, street-legal electric vehicles.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "DEALER_ADDRESS",
@@ -30,6 +27,16 @@
         "addressRegion": "DEALER_STATE",
         "postalCode": "DEALER_ZIP",
         "addressCountry": "US"
+      },
+      "telephone": "DEALER_PHONE",
+      "url": "https://evolutionmsv.com/dealer-DEALER_SLUG.html",
+      "image": "https://evolutionmsv.com/images/evolution-msv-logo.jpg",
+      "priceRange": "$$-$$$",
+      "openingHours": "Mo-Fr 09:00-17:00",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "DEALER_LAT",
+        "longitude": "DEALER_LNG"
       }
     }
     </script>
@@ -46,7 +53,7 @@
         <div class="container">
             <button class="hamburger">☰</button>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="EVolutionMSV.html">Home</a></li>
                 <li><a href="about.html">About EVolution MSVs</a></li>
                 <li><a href="find-dealers.html">Find Dealers</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -58,6 +65,7 @@
         <section class="dealer-header">
             <h1>EVolution MSV in DEALER_NAME</h1>
             <p class="subtitle">Authorized EVolution Medium Speed Vehicle Dealer</p>
+            
         </section>
         
         <section class="dealer-content">
@@ -70,12 +78,50 @@
             
             <h2>Dealer Info & Contact</h2>
             <ul>
-                DEALER_INFO_LIST
+                <!-- Dealer info will be populated dynamically -->
             </ul>
             
             <div class="map-container">
                 <h2>Location</h2>
-                DEALER_MAP_EMBED
+                <div class="google-maps" id="div-that-holds-the-iframe"></div>
+                <style>
+                      .google-maps {
+                            position: relative;
+                            padding-bottom: 25%; /* This is the aspect ratio */
+                            height: 0;
+                            overflow: hidden;
+                      }
+                      .google-maps iframe {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100% !important;
+                            height: 100% !important;
+                      }
+                </style>
+
+                <script>
+                //doesn't block the load event
+                function createGMapsIframe(){
+                  var i = document.createElement("iframe");
+                  i.src = "DEALER_MAP_URL";
+                  i.scrolling = "auto";
+                  i.frameborder = "0";
+                  i.width = "600px";
+                  i.height = "450px";
+                  i.setAttribute("allowFullScreen", "");
+                  i.setAttribute("style", "border:0");
+                  document.getElementById("div-that-holds-the-iframe").appendChild(i);
+                };
+                        
+                // Check for browser support of event handling capability
+                if (window.addEventListener)
+                        window.addEventListener("load", createGMapsIframe, false);
+                else if (window.attachEvent)
+                        window.attachEvent("onload", createGMapsIframe);
+                else 
+                        window.onload = createGMapsIframe;
+                </script>
             </div>
             
             <h2>EVolution Medium Speed Vehicle Options</h2>
@@ -84,8 +130,8 @@
             </p>
             <ul>
                 <li><strong>Street Legal EVolution MSVs:</strong> Perfect for neighborhood transportation</li>
-                <li><strong>Electric Utility EVolution MSVs:</strong> Ideal for work sites and property maintenance</li>
-                <li><strong>Luxury EVolution MSVs:</strong> Comfortable, efficient community travel with premium features</li>
+                <li><strong>Electric Utility Vehicles:</strong> Ideal for work sites and property maintenance</li>
+                <li><strong>Luxury EVolution MSVs:</strong> Comfortable, efficient community travel</li>
                 <li><strong>Custom EVolution MSVs:</strong> Tailored to your specific requirements</li>
             </ul>
             
@@ -94,30 +140,44 @@
                 EVolution Medium Speed Vehicles offer numerous advantages over traditional transportation options:
             </p>
             <ul>
-                <li>Eco-friendly electric operation with zero emissions</li>
+                <li>Eco-friendly electric operation</li>
                 <li>Lower operating costs than conventional vehicles</li>
                 <li>Street-legal on roads with speed limits up to 35 mph</li>
                 <li>Easy parking and maneuverability</li>
                 <li>Reduced carbon footprint</li>
                 <li>Community-friendly transportation</li>
-                <li>Advanced battery technology for extended range</li>
-                <li>Modern features and comfortable design</li>
             </ul>
             
             <h2>Frequently Asked Questions</h2>
-            <div class="faq-section">
-                <h3>What makes EVolution MSVs different from regular golf carts?</h3>
-                <p>EVolution Medium Speed Vehicles are specifically designed for street use with required safety features including headlights, turn signals, seat belts, mirrors, and windshields. They offer greater range, comfort, and functionality compared to traditional golf carts.</p>
+            <div itemscope itemtype="https://schema.org/FAQPage">
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">What makes EVolution MSVs street legal?</h3>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>EVolution Medium Speed Vehicles are street legal because they meet federal safety standards for low-speed vehicles. They include required safety features such as headlights, turn signals, mirrors, windshield, seat belts, and more. These vehicles are typically allowed on roads with posted speed limits of 35 mph or less, though specific regulations vary by state and local jurisdiction.</p>
+                        </div>
+                    </div>
+                </div>
                 
-                <h3>Do I need a special license to drive an EVolution MSV?</h3>
-                <p>In most states, a standard driver's license is sufficient to operate an EVolution MSV on roads with speed limits of 35 mph or less. However, specific regulations vary by location, so we recommend checking your local laws.</p>
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">How far can an EVolution MSV travel on a single charge?</h3>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>The range of an EVolution Medium Speed Vehicle typically varies between 30-50 miles on a single charge, depending on the model, battery capacity, terrain, and driving conditions. Our newer models with advanced lithium-ion batteries can achieve even greater ranges. At our dealership, we can help you select the right EVolution MSV with the appropriate battery capacity for your specific travel needs.</p>
+                        </div>
+                    </div>
+                </div>
                 
-                <h3>What kind of maintenance do EVolution MSVs require?</h3>
-                <p>EVolution MSVs require minimal maintenance compared to gas-powered vehicles. Regular battery checks, tire pressure monitoring, and occasional brake inspections are typically all that's needed. Our service department can provide a complete maintenance schedule for your specific model.</p>
-                
-                <h3>Can EVolution MSVs be customized?</h3>
-                <p>Yes! We offer a wide range of customization options including seating configurations, storage solutions, weather protection, technology upgrades, and cosmetic enhancements. Visit our showroom to explore all available options.</p>
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">Do I need a special license to drive an EVolution MSV?</h3>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div itemprop="text">
+                            <p>In most states, you need a valid driver's license to operate an EVolution Medium Speed Vehicle on public roads. Some states may have specific requirements or restrictions, so we recommend checking your local regulations. Our dealership staff can provide guidance on the specific requirements in your area and help ensure you have all the necessary documentation for legal operation.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
         </section>
         
         <section class="back-link">
@@ -125,6 +185,22 @@
         </section>
     </main>
     
+    <section id="buying-guide" class="container">
+        <h2>EVolution MSV Buying Guide: Finding Your Perfect EVolution Medium Speed Vehicle</h2>
+        <p>When shopping for an EVolution Medium Speed Vehicle (EVolution MSV), it's important to consider your specific needs and usage patterns. EVolution MSVs offer an eco-friendly, cost-effective transportation solution for short-distance travel, with various models available to suit different lifestyles and requirements. Our authorized EVolution MSV dealers can help you navigate options including battery capacity, seating configuration, storage space, and additional features to ensure you find the perfect match for your transportation needs.</p>
+        
+        <h3>EVolution MSV Financing and Ownership Benefits</h3>
+        <p>Investing in an EVolution Medium Speed Vehicle comes with numerous financial advantages. Many of our EVolution MSV dealers offer flexible financing options, warranty packages, and maintenance plans to make ownership hassle-free. EVolution MSVs typically have lower insurance costs, minimal maintenance requirements, and zero fuel expenses compared to traditional vehicles. Additionally, some locations offer tax incentives for eco-friendly transportation solutions, making an EVolution MSV purchase even more economical in the long run.</p>
+    </section>
+
+    <section id="msv-advantages" class="container">
+        <h2>Why Choose an EVolution Medium Speed Vehicle?</h2>
+        <p>EVolution Medium Speed Vehicles represent the future of short-distance mobility. With rising fuel costs and growing environmental concerns, EVolution MSVs offer a practical alternative that reduces your carbon footprint while providing convenient transportation. These vehicles are perfect for planned communities, campuses, small towns, and neighborhoods, allowing easy access to local amenities without the hassle of traditional vehicles.</p>
+        
+        <h3>EVolution MSV Models and Customization Options</h3>
+        <p>Today's EVolution Medium Speed Vehicles come in a variety of models with extensive customization options. From basic transportation models to luxury versions with premium features, there's an EVolution MSV to match every preference and budget. Many models offer customizable seating, storage solutions, weather protection packages, and technology integrations. Visit your local EVolution MSV dealer to explore the full range of available options and find the configuration that best suits your lifestyle needs.</p>
+    </section>
+
     <footer>
         <div class="container">
             <p>&copy; 2025 EVolutionMSV.com - All Rights Reserved</p>
