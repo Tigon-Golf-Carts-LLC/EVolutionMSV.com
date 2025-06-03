@@ -94,6 +94,44 @@
             position: absolute;
             top: 0;
             left: 0;
+            width: 100% !important;
+            height: 100% !important;
+      }
+</style>
+
+<script>
+//doesn't block the load event
+function createGMapsIframe(){
+  var i = document.createElement("iframe");
+  i.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.9025009626635!2d2!3d3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x46f84e4b0c8f532c!2z0J_QmNCm0JjQmtCQ0KLQng!5e0!3m2!1sbg!2sus!4v1448115192914";
+  i.scrolling = "auto";
+  i.frameborder = "0";
+  i.width = "600px";
+  i.height = "450px";
+  i.setAttribute("allowFullScreen", "");
+  i.setAttribute("style", "border:0");
+  document.getElementById("div-that-holds-the-iframe").appendChild(i);
+};
+        
+// Check for browser support of event handling capability
+if (window.addEventListener)
+        window.addEventListener("load", createGMapsIframe, false);
+else if (window.attachEvent)
+        window.attachEvent("onload", createGMapsIframe);
+else 
+        window.onload = createGMapsIframe;
+</script>
+<style>
+      .google-maps {
+            position: relative;
+            padding-bottom: 25%; // This is the aspect ratio
+            height: 0;
+            overflow: hidden;
+      }
+      .google-maps iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
       }
 </style>
 
