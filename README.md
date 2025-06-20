@@ -34,3 +34,5 @@ To modify dealer information or add new dealers:
 ## License
 
 © 2025 MSVDealer.com - All Rights Reserved
+Author: https://tigongolfcarts.com
+
